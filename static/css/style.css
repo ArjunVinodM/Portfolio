@@ -160,6 +160,10 @@
     text-align: right;
 }
 
+.timeline>li.timeline-inverted {
+    text-align: left;
+}
+
 @media screen and (max-width: 768px) {
     .timeline>li.timeline-unverted {
         text-align: left;
@@ -864,7 +868,7 @@ table {
 
 .hero h1 {
     font-size: 120px;
-    letter-spacing: -8px;
+    /* letter-spacing: -8px; */
     margin: 0;
     font-weight: 600;
     line-height: 95px;
@@ -1000,7 +1004,7 @@ h1.arrow span {
 /* ==========================================================================About========================================================================== */
 
 .about-image {
-    height: 400px;
+    height: 25rem;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -1562,7 +1566,7 @@ footer a {
 
 footer {
     background-color: #f3f5f8;
-    padding: 40px 0 30px;
+    /* padding: 40px 0 30px; */
 }
 
 footer p {
@@ -1812,4 +1816,9 @@ ul.slides li {
     .subscribe {
         padding-bottom: 40px;
     }
+}
+
+
+}
+
 }

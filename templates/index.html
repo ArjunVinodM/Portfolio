@@ -33,6 +33,47 @@
     <![endif]-->
 </head>
 
+<style>
+    table{
+        border: 2px solid white;
+        border-collapse: collapse; /* Collapse borders to remove spacing */
+        width: 100%;
+    }
+    th, td{
+        border: 2px solid white;
+        border-collapse: collapse; /* Collapse borders to remove spacing */
+    }
+
+    th, td {
+        padding: 14px 12px;
+    }
+    td{
+        text-align: left;
+    }
+
+    @media (min-width: 992px) {
+        .center-text span {
+            margin-right: 4.6rem;
+        }
+    }
+
+    @media (max-width: 767px) {
+        .hero h1 {
+            margin-top: 23rem; /* Add the desired top margin for mobile view */
+        }
+    }
+
+    .hero h1,h3 {
+        text-shadow: 0 0 2px #ffffff, 0 0 2px #ffffff; 
+    }
+
+    #td_col {
+        color: white;
+    }
+    
+</style>
+
+
 <body id="top">
 
     <!-- ****************************** Preloader ************************** -->
@@ -52,9 +93,10 @@
                         <div class="icon-list">
                             <a href="#"><i class="fa fa-fw fa-home"></i><span>Home</span></a>
                             <a href="#about"><i class="fa fa-fw fa-quote-left"></i><span>About</span></a>
-                            <a href="#project"><i class="fa fa-fw fa-globe"></i><span>Project</span></a>
+                            <a href="#project"><i class="fa fa-fw fa-folder-open"></i><span>Project</span></a>
                             <a href="#skills"><i class="fa fa-fw fa-cogs"></i><span>skills</span></a>
-                            <a href="#resume"><i class="fa fa-fw fa-rss"></i><span>resume</span></a>
+                            <a href="#resume"><i class="fa fa-fw fa-book"></i><span>education</span></a>
+                            <a href="#experience"><i class="fa fa-fw fa-line-chart"></i><span>experience</span></a>
                             <a href="#contact"><i class="fa fa-fw fa-envelope-o"></i><span>Contact</span></a>
                         </div>
                     </nav>
@@ -77,26 +119,28 @@
 
                 <!-- HEADER HEADLINE -->
                 <div class="row">
-                    <div class="col-md-8 col-md-offset-4 inner">
-                        <h1 class="animated fadeInDown" style="font-size: 4.63rem;">
-                            <span style="color:#9c900e">ARJUN</span>
-                            <span><span>Vinod</span>.M</span>
+                    <div class="col-md-8 col-md-offset-5 inner">
+                        <h1 class="animated fadeInDown" style="font-size: 4.25rem; letter-spacing: -4px;">
+                            <span class="white-border" style="color: black;">ARJUN</span>
+                            <span style="color: black;" class="white-border">Vinod.M</span>
                         </h1>
                         <!-- Title -->
                         <h3 class="animated fadeInUp delay-05s">
-                            <span class="rotate" style="color: red;">Python Django Developer</span></h3>
+                            <span class="rotate" style="color: black;">Python Django Developer</span></h3>
                         <!-- Text Rotator -->
                     </div>
                 </div>
                 <!-- Learn More Button -->
                 <div class="row">
-                    <div class="col-md-6 col-md-offset-3 text-center">
-                        <a href="#about" class="scrollto wow fadeInUp delay-5s ">
-                            <p><span style="color: red;">SEE MORE</span></p>
-                            <p class="scrollto--arrow"><img src="{% static "img/scroll-down.png" %}" alt="scroll down arrow"></p>
+                    <div class="col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-12 text-center">
+                        <a href="#about" class="scrollto wow fadeInUp delay-5s">
+                            <p class="center-text">
+                                <span style="color: black;">SEE MORE</span>
+                                <span style="color: red;"><i class="fa fa-angle-down"></i></span>
+                            </p>
                         </a>
                     </div>
-                </div>
+                </div>                
             </div>
         </section>
         <!-- Header Image End -->
@@ -116,7 +160,7 @@
             <!-- WELCOME TEXT -->
             <div class="row">
                 <div class="col-md-8 col-md-offset-2 wp1">
-                    <h1 class="arrow">A little <span>about</span> me</h1>
+                    <h1 class="arrow">A little <span style="color: 	#FFA500">about</span> me</h1>
                     <!-- Headline -->
                     <!-- about / welcome text -->
                     <p>I am a Python Django Developer who is seeking new technologies to solve problems, and to use excellent team work skills in Python Django framework. Always seeking good opportunities to upgrade myself and my career.</p>
@@ -184,42 +228,12 @@
         </div>
     </section>
 
-    <section class=" features text-center section-padding " id="skills">
-        <div class="container-fluid ">
-            <!-- About 1 -->
-            <div class="row color-bg ">
-                <div class="col-md-6 nopadding features-intro-img ">
-                    <div class="about-image " style="background-image:url(static/img/about1.png) "></div>
-                    <!-- about image 1 -->
-                </div>
-                <div class="col-md-6 about-text ">
-                    <h1 style="color: aliceblue;"><b>Skills</b></h1>
-                    <!-- headline-->
-                    <p>Programming Languages : Python</p>
-                    <p>Framework : Django</p>
-                    <p>Frontend : HTML, CSS, Bootstrap, Javascript</p>
-                    <p>API Tool : Postman</p>
-                    <p>Database : Sqlite3, Mysql</p>
-                    <p>Version Controls : Git & GIthub</p>
-                    <!-- About Text 1 -->
-                    <!-- <a href="index.html#team " class="weight-outline-btn ">Read more</a> -->
-                    <!-- read more button  -->
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==========================
-        RESUME SECTION  
-        =========================== -->
-
-
-    <section class="intro text-center section-padding " id="resume">
+    {% comment %} <section class="intro text-center" id="resume">
         <div id="fh5co-resume" class="fh5co-bg-color">
             <div class="container">
                 <div class="row animate-box">
                     <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-                        <h2>My Education</h2>
+                        <h2>Work Experience</h2>
                     </div>
                 </div>
                 <div class="row">
@@ -227,7 +241,7 @@
                         <ul class="timeline">
                             <li class="timeline-heading text-center animate-box">
                                 <div>
-                                    <h3>Work Experience</h3>
+                                    <h3>Experience</h3>
                                 </div>
                             </li>
                             <li class="timeline-inverted animate-box">
@@ -242,7 +256,76 @@
                                     </div>
                                 </div>
                             </li>
-                            <br>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> {% endcomment %}
+
+    <section class="features text-center" id="skills">
+        <div class="container">
+            <!-- About 1 -->
+            <div class="row color-bg">
+                {% comment %} <div class="col-md-4 nopadding features-intro-img">
+                    <div class="about-image" style="background-image:url(static/img/about1.png)"></div>
+                    <!-- about image 1 -->
+                </div> {% endcomment %}
+                <div class="col-md-12 col-sm-12" style='height: 27rem;'>
+                    <h1 style="color: aliceblue; text-align: left;"><b>Skills</b></h1>
+                    <!-- headline-->
+                    <table style="color: white;">
+                        <tr>
+                            <td><b>Programming Languages:</b></td>
+                            <td id="td_col">Python</td>
+                        </tr>
+                        <tr>
+                            <td><b>Framework:</b></td>
+                            <td id="td_col">Django</td>
+                        </tr>
+                        <tr>
+                            <td><b>Frontend:</b></td>
+                            <td id="td_col">HTML, CSS, Bootstrap, Javascript</td>
+                        </tr>
+                        <tr>
+                            <td><b>API Tool:</b></td>
+                            <td id="td_col">Postman</td>
+                        </tr>
+                        <tr>
+                            <td><b>Database:</b></td>
+                            <td id="td_col">Sqlite3, Mysql</td>
+                        </tr>
+                        <tr>
+                            <td><b>Version Controls:</b></td>
+                            <td id="td_col">Git & GitHub</td>
+                        </tr>
+                    </table>
+                    <!-- About Text 1 -->
+                    <!-- <a href="index.html#team " class="weight-outline-btn ">Read more</a> -->
+                    <!-- read more button -->
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+
+    <!-- ==========================
+        RESUME SECTION  
+        =========================== -->
+
+
+    <section class="intro text-center" id="resume">
+        <div id="fh5co-resume" class="fh5co-bg-color">
+            <div class="container">
+                <div class="row animate-box">
+                    <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+                        <h2>My Education</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 col-md-offset-0">
+                        <ul class="timeline">
                             <li class="timeline-heading text-center animate-box">
                                 <div>
                                     <h3>Education</h3>
@@ -296,12 +379,38 @@
         </div>
     </section>
 
+    <section class="text-center " id="experience">
+        <!-- To Top Button -->
+        <div class="container ">
+            <div class="row animate-box">
+                <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+                    <h2>My Experience</h2>
+                </div>
+            </div>
+            <!-- Headline -->
+            <div class="row contact-details ">
+                <!-- Phone Number Box -->
+                <div class="col-md-12">
+                    <div class="dark-box box-hover ">
+                        <h2><i class="fa fa-suitcase"></i><span>Experience</span></h2>
+                        <p>Altos Technologies - 2023 (April - September)</p>
+                    </div>
+                </div>
+
+                <!-- Adress Box -->
+
+                <!-- E-Mail Box -->
+            </div>
+            <!-- Social Buttons - use font-awesome, past in what you want -->
+        </div>
+    </section>
+
     <!-- ==========================
         CONTACT SECTION
         =========================== -->
     <section class="text-center section-padding contact-wrap " id="contact">
         <!-- To Top Button -->
-        <a href="#top " class="up-btn "><i class="fa fa-chevron-up "></i></a>
+        <a href="#top " class="up-btn"  style="background-color: #FFA500;"><i class="fa fa-chevron-up "></i></a>
         <div class="container ">
             <!-- Headline -->
             <div class="row ">
@@ -337,9 +446,9 @@
             </div>
             <div class="row">
                 <!-- Google Maps (Change your Settings below) -->
-                <div class="col-md-6">
-                    <div class="embed-responsive embed-responsive-4by3">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d765.1944428342904!2d75.82419678389813!3d11.245298942431223!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba65bc1206a3a41%3A0x4a0b64a942de0bf8!2sPoovangal%2C%20Kozhikode%2C%20Kerala%20673014!5e1!3m2!1sen!2sin!4v1696332748658!5m2!1sen!2sin" width="100%" height="250px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <div class="col-md-6" style='height: 25rem;'>
+                    <div id="googlemaps" style="margin-top: -1.2rem;">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d765.1944428342904!2d75.82419678389813!3d11.245298942431223!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba65bc1206a3a41%3A0x4a0b64a942de0bf8!2sPoovangal%2C%20Kozhikode%2C%20Kerala%20673014!5e1!3m2!1sen!2sin!4v1696332748658!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
                 
@@ -404,7 +513,7 @@
         <div class="container ">
             <div class="row ">
                 <div class="col-md-12 text-center ">
-                    <p>ArjunVinodM</p>
+                    <p><i class="fa fa-copyright" aria-hidden="true"></i>ArjunVinodM</p>
                 </div>
             </div>
         </div>
@@ -417,7 +526,7 @@
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js "></script>
     <!-- SmoothScroll -->
-    <script type="text/javascript " src="assets/smoothscroll/smoothscroll.js "></script>
+    <script type="text/javascript " src="script/assets/smoothscroll/smoothscroll.js "></script>
     <!-- Bootstrap -->
     <script src="static/assets/bootstrap/js/bootstrap.min.js "></script>
     <!-- Waypoints -->
@@ -433,87 +542,72 @@
     <!-- Lightbox.js -->
     <script src="static/assets/lightbox/js/lightbox.min.js "></script>
     <!-- Google Maps -->
-    <script type="text/javascript " src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDeKBBPJTG3v5w3cNPAgM6ZsJiPyL1mP_o&amp;sensor=false "></script>
+    {% comment %} <script type="text/javascript " src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBW1KHsTA5LPkG9RTG8Nc90_x3FuncogXo &amp;sensor=false "></script> {% endcomment %}
     <!-- Theme JavaScript Core -->
     <script src="static/js/main.js "></script>
     <script src="static/js/script.js "></script>
 
     <!-- GOOGLE MAPS DATA -->
-    <script type="text/javascript ">
-        // When the window has finished loading create our google map below
-        google.maps.event.addDomListener(window, 'load', init);
-
+    <script>
+        // Initialize the map when the window has finished loading
+        window.addEventListener('load', init);
+    
         function init() {
             // Basic options for a simple Google Map
-            // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
             var mapOptions = {
                 // How zoomed in you want the map to start at (always required)
                 zoom: 15,
-
-                scrollwheel: false,
-
+    
                 // The latitude and longitude to center the map (always required)
-                center: new google.maps.LatLng(40.68961985411178, -74.01618003845215), // New York 
-
-                // How you would like to style the map. 
-                // This is where you would paste any style found on Snazzy Maps.
-                styles: [{
-                    featureType: 'water',
-                    stylers: [{
-                        color: '#F2F2F2'
-                    }, {
-                        visibility: 'on'
-                    }]
-                }, {
-                    featureType: 'landscape',
-                    stylers: [{
-                        color: '#FFFFFF'
-                    }]
-                }, {
-                    featureType: 'road',
-                    stylers: [{
-                        saturation: -100
-                    }, {
-                        lightness: 45
-                    }]
-                }, {
-                    featureType: 'road.highway',
-                    stylers: [{
-                        visibility: 'simplified'
-                    }]
-                }, {
-                    featureType: 'road.arterial',
-                    elementType: 'labels.icon',
-                    stylers: [{
-                        visibility: 'off'
-                    }]
-                }, {
-                    featureType: 'administrative',
-                    elementType: 'labels.text.fill',
-                    stylers: [{
-                        color: '#ADADAD'
-                    }]
-                }, {
-                    featureType: 'transit',
-                    stylers: [{
-                        visibility: 'off'
-                    }]
-                }, {
-                    featureType: 'poi',
-                    stylers: [{
-                        visibility: 'off'
-                    }]
-                }]
+                center: new google.maps.LatLng(11.245298942431223, 75.82419678389813), // Coordinates for Poovangal, Kozhikode, Kerala
+    
+                // How you would like to style the map.
+                styles: [
+                    {
+                        featureType: 'water',
+                        stylers: [{ color: '#F2F2F2' }, { visibility: 'on' }]
+                    },
+                    {
+                        featureType: 'landscape',
+                        stylers: [{ color: '#FFFFFF' }]
+                    },
+                    {
+                        featureType: 'road',
+                        stylers: [{ saturation: -100 }, { lightness: 45 }]
+                    },
+                    {
+                        featureType: 'road.highway',
+                        stylers: [{ visibility: 'simplified' }]
+                    },
+                    {
+                        featureType: 'road.arterial',
+                        elementType: 'labels.icon',
+                        stylers: [{ visibility: 'off' }]
+                    },
+                    {
+                        featureType: 'administrative',
+                        elementType: 'labels.text.fill',
+                        stylers: [{ color: '#ADADAD' }]
+                    },
+                    {
+                        featureType: 'transit',
+                        stylers: [{ visibility: 'off' }]
+                    },
+                    {
+                        featureType: 'poi',
+                        stylers: [{ visibility: 'off' }]
+                    }
+                ]
             };
-
-            // Get the HTML DOM element that will contain your map 
-            // We are using a div with id="map " seen below in the <body>
+    
+            // Get the HTML DOM element that will contain your map
             var mapElement = document.getElementById('googlemaps');
-
-            // Create the Google Map using out element and options defined above
+    
+            // Create the Google Map using the element and options defined above
             var map = new google.maps.Map(mapElement, mapOptions);
         }
     </script>
+    
 
     <!-- TEXT ROTATOR SETTINGS -->
     <script type="text/javascript ">
